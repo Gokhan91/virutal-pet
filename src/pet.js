@@ -7,7 +7,7 @@ function Pet(name, age) {
 Pet.prototype.growUp = function () {
     this.age += 1;
     this.hunger += 5;
-    if (this.fitness < 3) this.fitness === 0;
+    if ((this.fitness - 3) < 0) { this.fitness = 0; }
     else this.fitness -= 3;
 };
 Pet.prototype.walk = function () {
