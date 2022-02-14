@@ -88,4 +88,32 @@ describe('constructor', () => {
         });
     });
 
+    describe('isAlive', () => {
+        it('returns false if fitness is 0 or less', () => {
+            const pet = new Pet('Fido');
+            pet.fitness = 0
+            pet.isAlive();
+            expect(false);
+        });
+        it('returns false is hunger is 10 or more', () => {
+            const pet = new Pet('Fido');
+            pet.hunger = 15
+            pet.isAlive();
+            expect(false);
+        });
+        it('returns false if age is 30 or more', () => {
+            const pet = new Pet('Fido');
+            pet.age = 35
+            pet.isAlive();
+            expect(false);
+        });
+
+        it('returns true if not dead', () => {
+            const pet = new Pet('Fido');
+            pet.hunger = 2
+            pet.fitness = 6
+            pet.isAlive();
+            expect(true);
+        });
+    });
 });
