@@ -19,4 +19,16 @@ Pet.prototype.walk = function () {
 
 };
 
+Pet.prototype.feed = function () {
+    if ((this.hunger - 3) < 0) { this.hunger = 0; }
+    else this.hunger -= 3;
+};
+
+Pet.prototype.checkUp = function () {
+    if (this.fitness <= 3 && this.hunger >= 5) return "I am hungry AND I need a walk";
+    if (this.fitness <= 3) return "I need a walk";
+    if (this.hunger >= 5) return "I am hungry";
+    else return "I feel great!";
+};
+
 module.exports = Pet;
